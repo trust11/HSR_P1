@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--  Meta  -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link id="colorStyle" rel="stylesheet" href="./css/blue.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <script src='js/jquery-3.3.1.min.js'></script>
+    <script src="js/view.js"></script>
+    <script src="js/viewNoteForm.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/controllerNoteForm.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/helper.js"></script>
+
+</head>
+<body id="">
+
+<main id="grid-main-overview">
+    <header>
+        <div id="btn-top" class="btn-wrapper">
+            <select id="btn-choose-theme">
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+            <button id="btn-create-new-note" class="btn-wrapper-right">Create New Note</button>
+        </div>
+        <H2>Filter</H2>
+        <div id="btn-note-sort" class="rbt-wrapper">
+            <div>
+                <input id="rib-orderby-finish-date" type="radio" name="rg" checked="checked">
+                <label for="rib-orderby-finish-date">finished</label>
+            </div>
+            <div>
+                <input id="rib-orderby-create-date" type="radio" name="rg">
+                <label for="rib-orderby-create-date">created</label>
+            </div>
+            <div>
+                <input id="rib-orderby-importance" type="radio" name="rg">
+                <label for="rib-orderby-importance">importance</label>
+            </div>
+            <div>
+                <input id="btn-show-done" type="checkbox"></input>
+                <label for="btn-show-done">Done</label>
+            </div>
+        </div>
+
+    </header>
+    <section name="overview" class="overview">
+        <div>section: Hier kommt die overview rein</div>
+    </section>
+
+    <div id="modal-form-edit">
+        <form id="dialog-edit-note" name="Note">
+            <label for="note-title-field">Title</label>
+            <input id="note-title-field" type="text" placeholder="...my note title..."></input>
+
+            <label for="note-description-field">Description</label>
+            <textarea id="note-description-field" type="text" placeholder="...my note it self..."></textarea>
+
+            <label for="note-importance-indicator">Importance</label>
+            <select type="text" id="note-importance-indicator">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="note-date-field">Done Date</label>
+            <input id="note-date-field" type="date"></input>
+
+            <button id="ed-btn-reset-note" type="reset">Reset</button>
+            <button id="ed-btn-save-note">Save</button>
+            <button id="ed-btn-cancel-note">Cancel</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="btn-wrapper">
+            <div class="footer-author">Crated by Peter Müller</div>
+            <div class="btn-wrapper-right">DRAFT</div>
+        </div>
+    </footer>
+</main>
+
+<!-- Scripts -->
+<script>let controller = new Controller();</script>
+</body>
+
+</html>

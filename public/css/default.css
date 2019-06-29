@@ -1,0 +1,122 @@
+* {
+    font-family: Verdana, sans-serif;
+    color: var(--textColor);
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: var(--bodyColor);
+}
+
+
+/* Button Style */
+form > [type=text], form > [type=date], form > select > option {
+    color: var(--textColorInput);
+    background: var(--textBackgroundColorInput);
+}
+
+button, #btn-choose-theme {
+    border: none;
+    border-radius: 5px;
+    background: var(--buttonBackgroundColor);
+    color: var(--buttonTextColor);
+    font-size: 1.2em;
+}
+
+
+/* Edit Note*/
+#modal-form-edit {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    background: #fff6;
+
+}
+
+#dialog-edit-note {
+    display: flex;
+    flex-direction: column;
+    background: var(--bodyColor);
+    width: 60%;
+    margin: auto;
+    max-width: 400px;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* All about grid */
+
+
+#grid-main-overview > section {
+    border: 1px solid;
+}
+
+#grid-main-overview {
+    display: grid;
+    margin: 0 auto;
+    max-width: 940px;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas: "header" "content" "footer";
+}
+
+#grid-main-overview > header, section, footer {
+    /* min-height:50px;*/
+    padding: 0px;
+}
+
+#grid-main-overview > header {
+    grid-area: header;
+}
+
+#grid-main-overview > section {
+    grid-area: content;
+}
+
+#grid-main-overview > footer {
+    grid-area: footer;
+}
+
+/*
+*** Button wrapper for the filter buttons
+*/
+
+.btn-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.btn-wrapper-right {
+    grid-column-start: 4;
+}
+
+.rbt-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.footer-author {
+    grid-column: 1 / span 2
+}
+
+.btn-wrapper > * {
+    padding: 1em;
+}
+
