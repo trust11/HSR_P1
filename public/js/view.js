@@ -40,15 +40,6 @@ class View {
         this.rtnImportance = Helper.getEBI("#rib-orderby-importance");
     }
 
-    registerEditDialogEvents() {
-        this.edBtnSave.onclick = this.saveNote.bind(this);
-        this.edBtnCancel.onclick = this.cancelEditDialog.bind(this);
-
-            this.btnNewNote.onclick = this.openNewNote.bind(this);
-            this.btnChooseTheme.onchange = this.toggleColorStyle.bind(this);
-
-    }
-
     openNewNote() {
         let mfe = Helper.getEBI("#modal-form-edit");
         mfe.style.display = "flex";
@@ -56,9 +47,9 @@ class View {
     }
 
     toggleColorStyle() {
-            let link = this.cssLink;
-            let href = link.href;
-            this.cssLink.href = href.endsWith("blue.css") ? href.replace("blue", "green") : href.replace("green", "blue");
+        let link = this.cssLink;
+        let href = link.href;
+        this.cssLink.href = href.endsWith("blue.css") ? href.replace("blue", "green") : href.replace("green", "blue");
     }
 
     showNoteForm = () => {

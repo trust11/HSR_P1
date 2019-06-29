@@ -3,7 +3,8 @@ class ControllerNoteForm {
         // initialize  element events
         this.viewNoteForm = new ViewNoteForm();
         this.model = new Model(this);
-
+        this.note = null;
+        this.getNote();
         this.initEvents();
 /*
         this.initMainWindowElements();
@@ -17,28 +18,31 @@ class ControllerNoteForm {
 
     initEvents(){
         this.viewNoteForm.getBtnSaveNote().addEventListener("click", (event) => {
-            this.saveNote();
+             event.preventDefault();
+             this.saveNote();
         });
+
         this.viewNoteForm.getBtnCancelNote().addEventListener("click", (event) => {
+            event.preventDefault();
             this.cancelNote();
         });
     }
 
+    cancelNote() {
+        this.viewNoteForm.cancleEditDialog();
+    }
+
     saveNote(){
-        let note =  this.viewNoteForm.getNoteData();
+        let tempNote = this.note.deepCopy();
+        let note =  this.viewNoteForm.getNoteData(tempNote);
         this.model.saveNote(note);
     }
 
-    cancelNote() {
-        this.viewNoteForm.cancelEditDialog()
+    getNote(){ //empty note
+        this.model.getNote("");
     }
-
-    getNote(){
-        this.model.getNotes(this.getNotes_Callback);
-    }
-
-    getNotes_Callback(notes){
-        this.view.showAllNotes(notes);
+    getNote_Callback(note){
+        this.note = note;
     }
 
     handleFiltering() {

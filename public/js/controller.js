@@ -7,23 +7,27 @@ class Controller {
 
         this.initEvents();
         this.getNotes();
- /*         this.initMainWindowElements();
-        this.initEditDialogElements();
-        this.registerMainWindowEvents();
-        this.registerEditDialogEvents();
-        this.modalFormEdit = Helper.getEBI("#modal-form-edit");
-        this.editDialog = Helper.getEBI("#modal-form-edit")
-        this.cssLink = Helper.getEBI("#colorStyle");*/
+        this.cssLink = Helper.getEBI("#colorStyle");
     }
 
     initEvents(){
         this.view.getBtnNewNote().addEventListener("click", (event) => {
             this.openNewNoteWindow();
+            event.preventDefault();
         });
+
+        this.view.btnChooseTheme.onchange = (event) => {
+            this.toggleColorStyle();
+            event.preventDefault();
+        }
+
+    }
+
+    toggleColorStyle(){
+        this.view.toggleColorStyle(event);
     }
 
     openNewNoteWindow() {
-
         this.view.showNoteForm();
     }
 

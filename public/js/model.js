@@ -17,7 +17,8 @@ class Model {
                 //
             },
             error: (jqXHR, textStatus, errorThrown) => {
-                alert('nok');
+                alert(textStatus);
+                alert(errorThrown.message);
             },
         });
     }
@@ -49,7 +50,7 @@ class Model {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify(id),
+            data: JSON.stringify({_id: id}),
             success: (note) => {
                 this.controller.getNote_Callback(note);
                 /*
