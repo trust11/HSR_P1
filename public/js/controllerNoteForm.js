@@ -6,14 +6,6 @@ class ControllerNoteForm {
         this.note = null;
         this.getNote();
         this.initEvents();
-/*
-        this.initMainWindowElements();
-        this.initEditDialogElements();
-        this.registerMainWindowEvents();
-        this.registerEditDialogEvents();
-        this.modalFormEdit = Helper.getEBI("#modal-form-edit");
-        this.editDialog = Helper.getEBI("#modal-form-edit")
-        this.cssLink = Helper.getEBI("#colorStyle");*/
     }
 
     initEvents(){
@@ -29,17 +21,17 @@ class ControllerNoteForm {
     }
 
     cancelNote() {
-        this.viewNoteForm.cancleEditDialog();
+        this.viewNoteForm.cancelEditDialog();
     }
 
     saveNote(){
-        let tempNote = this.note.deepCopy();
+        let tempNote = Object.assign({},this.note);
         let note =  this.viewNoteForm.getNoteData(tempNote);
         this.model.saveNote(note);
     }
 
     getNote(){ //empty note
-        this.model.getNote("");
+        this.model.getNote("NEWITEM");
     }
     getNote_Callback(note){
         this.note = note;
@@ -47,14 +39,5 @@ class ControllerNoteForm {
 
     handleFiltering() {
         var gender = document.querySelector('input[name = "gender"]:checked').value;
-    }
-
-    saveEditDialog() {
-        let json = this.view.getValuesOfEditDialogAsJson();
-        //todo: send to controller who sends it then to the controller in the server
-
-        let editDialog = Helper.getEBI("#modal-form-edit");
-        // editDialog.save();
-        editDialog.style.display = "none";
     }
 }

@@ -6,7 +6,6 @@ class Model {
     }
 
     saveNote(note){
-        alert('saveNote ' + JSON.stringify(note));
         $.ajax({
             type: 'post',
             contentType: "application/json; charset=utf-8",
@@ -17,8 +16,8 @@ class Model {
                 //
             },
             error: (jqXHR, textStatus, errorThrown) => {
-                alert(textStatus);
-                alert(errorThrown.message);
+              /*  alert(textStatus);
+                alert(errorThrown.message);*/
             },
         });
     }
@@ -50,7 +49,7 @@ class Model {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify({_id: id}),
+            data: {id: id},
             success: (note) => {
                 this.controller.getNote_Callback(note);
                 /*

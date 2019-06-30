@@ -1,11 +1,12 @@
 class Note {
     constructor() {
-        this.title = null;
-        this.description = null;
+        this.title = "";
+        this.description = "";
         this.stateActive = true;
-        this.importance = 3;
-        this.created = new Date().toLocaleString();
-        this.completedBy = this.created.split(',')[0];
+        this.importance = "3";
+        this.created = null;
+        this.completedBy = null;
+        this.changedAt = null;
         this.finished = false;
     }
 }

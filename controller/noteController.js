@@ -1,5 +1,4 @@
 const NoteStore = require('../services/noteStore');
-const Note = require('../services/note');
 
 class NoteController {
     constructor(){
@@ -8,7 +7,7 @@ class NoteController {
 
     async getNotes(req, res) {
         if(req.query.id != null){
-            if(req.query.id.length === 0 ){
+            if(req.query.id === "NEWITEM" ){
                 this.getNoteInstance(req, res);
             }else{
                 this.getNote(req, res);

@@ -17,13 +17,13 @@ class ViewNoteForm {
         return  this.btnNoteCancel;
     }
 
-    cancleEditDialog(){
+    cancelEditDialog(){
         Helper.getEBI("#modal-form-edit").style.display = "none";
     }
 
     getNoteData(note) {
         let newNote = this.collectNoteData(note);
-        this.cancleEditDialog();
+        this.cancelEditDialog();
         return newNote;
     }
 
@@ -31,7 +31,12 @@ class ViewNoteForm {
         note.title = Helper.getEBI("#note-title-field").value;
         note.description = Helper.getEBI("#note-description-field").value;
         note.importance = Helper.getEBI("#note-importance-indicator").value;
-        note.date = Helper.getEBI("#note-date-field").value;
+        note.completedBy = Helper.getEBI("#note-date-field").value;
+        note.changedAt = new Date().toISOString().replace('T',' ').split('.')[0];
+
+        if(note.created === null) {
+            note.created = note.changedAt;
+        }
         return note;
     }
 
@@ -39,15 +44,5 @@ class ViewNoteForm {
         let mfe = Helper.getEBI("#modal-form-edit");
         mfe.style.display = "flex";
         Helper.getEBI("#ed-btn-reset-note").click();
-    }
-
-    openEditNote() {
-
-    }
-
-    showNoteForm() {
-        let mfe = Helper.getEBI("#modal-form-edit");
-
-        mfe.style.display = "flex"; // muss mit hide gemacht sein.
     }
 }
