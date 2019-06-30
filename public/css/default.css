@@ -26,6 +26,29 @@ button, #btn-choose-theme {
     font-size: 1.2em;
 }
 
+#note-overview{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: #0002;
+    flex-basis: auto;
+}
+
+#note-Tile{
+    display: flex;
+    flex-direction: column;
+    font-size: x-small;
+    border-width: medium;
+    background-color: var(--buttonBackgroundColor);
+    border-radius: 5px;
+    color: var(--buttonTextColor);
+    padding: 2px;
+    margin: 5px;
+    width: auto;
+    height: 200px;
+    box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.5), 0 0 10px 1px rgba(0,0,0,0.5);
+}
 
 /* Edit Note*/
 #modal-form-edit {
@@ -37,10 +60,7 @@ button, #btn-choose-theme {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
     background: #fff6;
-
 }
 
 #dialog-edit-note {
@@ -58,22 +78,23 @@ button, #btn-choose-theme {
 
 
 #grid-main-overview > section {
-    border: 1px solid;
+    border: 2px solid;
 }
 
 #grid-main-overview {
     display: grid;
     margin: 0 auto;
+    padding: 5px;
     max-width: 940px;
     height: 100%;
     grid-template-rows: auto 1fr auto;
-
     grid-template-areas: "header" "content" "footer";
+    box-shadow: 0 0 8px 1px rgba(0,0,0,0.5), 0 0 8px 1px rgba(0,0,0,0.5);
 }
 
 #grid-main-overview > header, section, footer {
     /* min-height:50px;*/
-    padding: 0px;
+    padding: 0;
 }
 
 #grid-main-overview > header {
@@ -97,7 +118,13 @@ button, #btn-choose-theme {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-gap: 10px;
-    margin: 10px;
+    margin: 0;
+    padding: 10px;
+    background: #0002;
+}
+
+.btn-wrapper > * {
+    padding:10px;
 }
 
 .btn-wrapper-right {
@@ -109,14 +136,17 @@ button, #btn-choose-theme {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-gap: 10px;
-    margin: 10px;
+    margin-bottom:  5px;
+    padding: 10px;
+    background: #0002;
 }
 
 .footer-author {
     grid-column: 1 / span 2
 }
 
-.btn-wrapper > * {
-    padding: 1em;
+footer{
+    margin-top: 5px;
 }
+
 

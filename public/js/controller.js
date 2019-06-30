@@ -3,11 +3,10 @@ class Controller {
         // initialize  element events
         this.view = new View();
         this.model = new Model(this);
-        this.noteForm = new ControllerNoteForm();
+        this.noteForm = new ControllerNoteForm(this);
 
         this.initEvents();
         this.getNotes();
-        this.cssLink = Helper.getEBI("#colorStyle");
     }
 
     initEvents(){
@@ -16,7 +15,7 @@ class Controller {
             event.preventDefault();
         });
 
-        this.view.btnChooseTheme.onchange = (event) => {
+        this.view.getBtnChooseTheme().onchange = (event) => {
             this.toggleColorStyle();
             event.preventDefault();
         }
@@ -24,42 +23,18 @@ class Controller {
     }
 
     toggleColorStyle(){
-        this.view.toggleColorStyle(event);
+        this.view.toggleColorStyle();
     }
 
     openNewNoteWindow() {
         this.view.showNoteForm();
     }
 
-    saveNote(){
-        let note =  this.view.getNote();
-        this.model.saveNote(note);
-    }
-
     getNotes(){
         this.model.getNotes(this.getNotes_Callback);
     }
 
-    getNote() {
-        this.model.getNote(id);
-    }
-
     getNotes_Callback(notes){
-        this.view.showAllNotes(notes);
+        this.view.showNoteOverview(notes);
     }
-
-    handleFiltering() {
-        var gender = document.querySelector('input[name = "gender"]:checked').value;
-    }
-
-    saveEditDialog() {
-        let json = this.view.getValuesOfEditDialogAsJson();
-        //todo: send to controller who sends it then to the controller in the server
-
-        let editDialog = Helper.getEBI("#modal-form-edit");
-        // editDialog.save();
-        editDialog.style.display = "none";
-    }
-
-
 }

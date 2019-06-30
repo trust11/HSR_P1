@@ -1,43 +1,39 @@
 class ControllerNoteForm {
     constructor() {
-        // initialize  element events
         this.viewNoteForm = new ViewNoteForm();
         this.model = new Model(this);
         this.note = null;
-        this.getNote();
-        this.initEvents();
+        this.getEmptyNote();
+        this.initEventsNoteForm();
     }
 
-    initEvents(){
+    initEventsNoteForm(){
         this.viewNoteForm.getBtnSaveNote().addEventListener("click", (event) => {
              event.preventDefault();
-             this.saveNote();
+             this.saveNoteForm();
         });
 
         this.viewNoteForm.getBtnCancelNote().addEventListener("click", (event) => {
             event.preventDefault();
-            this.cancelNote();
+            this.cancelNoteForm();
         });
     }
 
-    cancelNote() {
+    cancelNoteForm() {
         this.viewNoteForm.cancelEditDialog();
     }
 
-    saveNote(){
+    saveNoteForm(){
         let tempNote = Object.assign({},this.note);
         let note =  this.viewNoteForm.getNoteData(tempNote);
         this.model.saveNote(note);
     }
 
-    getNote(){ //empty note
+    getEmptyNote(){ //empty note
         this.model.getNote("NEWITEM");
     }
     getNote_Callback(note){
         this.note = note;
     }
 
-    handleFiltering() {
-        var gender = document.querySelector('input[name = "gender"]:checked').value;
-    }
 }
