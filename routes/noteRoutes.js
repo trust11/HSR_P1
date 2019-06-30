@@ -19,7 +19,7 @@ router.put("/", async (request, response) => {
 router.get("/", noteController.getNotes.bind(noteController)); //alle oder einer wenn mit id
 router.put ("/", noteController.updateNote.bind(noteController));     // Update
 router.post("/", noteController.createNote.bind(noteController));
-//router.patch("/:id:status", noteController.updateNote.bind(noteController));  // id wert
-//router.delete("/:id/", noteController.deleteNote.bind(noteController));
+router.patch("/:id:status", noteController.updateNote.bind(noteController));  // id wert
+router.delete("/:id/", noteController.deleteNote.bind(noteController));
 
 module.exports = router;

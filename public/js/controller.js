@@ -1,12 +1,14 @@
 class Controller {
+    note;
     constructor() {
         // initialize  element events
         this.view = new View();
         this.model = new Model(this);
-        this.noteForm = new ControllerNoteForm(this);
-
+        //this.note = null;
+        this.getEmptyNote();
         this.initEvents();
-        this.getNotes();
+        this.initEventsNoteForm();
+        this.updateNoteOverview();
     }
 
     initEvents(){
@@ -19,7 +21,18 @@ class Controller {
             this.toggleColorStyle();
             event.preventDefault();
         }
+    }
 
+    initEventsNoteForm(){
+        this.view.getBtnSaveNote().addEventListener("click", (event) => {
+            event.preventDefault();
+            this.saveNoteForm();
+        });
+
+        this.view.getBtnCancelNote().addEventListener("click", (event) => {
+            event.preventDefault();
+            this.cancelNoteForm();
+        });
     }
 
     toggleColorStyle(){
@@ -30,11 +43,29 @@ class Controller {
         this.view.showNoteForm();
     }
 
-    getNotes(){
+    updateNoteOverview(){
         this.model.getNotes(this.getNotes_Callback);
     }
 
     getNotes_Callback(notes){
         this.view.showNoteOverview(notes);
+    }
+
+    cancelNoteForm() {
+        this.view.cancelNoteForm();
+    }
+
+    saveNoteForm(){
+        let tempNote = Object.assign({},this.note);
+        let note =  this.view.getNoteData(tempNote);
+        this.model.saveNote(note);
+        this.updateNoteOverview();
+    }
+
+    getEmptyNote(){ //empty note
+        this.model.getNote("NEWITEM");
+    }
+    getNote_Callback(note){
+        this.note = note;
     }
 }
