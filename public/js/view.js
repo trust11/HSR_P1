@@ -11,12 +11,13 @@ class View {
     getBtnChooseTheme = () => this.btnChooseTheme;
     getBtnSaveNote = () => this.btnNoteSave;
     getBtnCancelNote = () => this.btnNoteCancel;
-
-
     getNoteForm = () => Helper.getEBI(`#modal-form-edit`);
     getNoteOverview = () => Helper.getEBI("#note-overview");
     getNoteOverviewTemplateContent = () => Helper.getEBI("#note-overview-template");
     getTileElement = () => Helper.getEBI("#note-overview");
+
+    cancelNoteForm = () => this.closeNoteForm();
+    closeNoteForm = ()=> Helper.getEBI("#modal-form-edit").style.display = "none";
 
     showNoteOverview = notes => {
         let template = Handlebars.compile(this.getNoteOverviewTemplateContent().innerHTML);
@@ -36,6 +37,34 @@ class View {
         this.btnNoteCancel = Helper.getEBI("#ed-btn-cancel-note");
     };
 
+    getNoteData = note => {
+        if(this.tempNote){note = this.tempNote;}
+        let newNote = this.getNoteDataFormInputElements(note);
+        this.closeNoteForm();
+        return newNote;
+    };
+
+    getNoteDataFormInputElements = note => {
+        note.title = Helper.getEBI("#note-title-field").value;
+        note.description = Helper.getEBI("#note-description-field").value;
+        note.importance = Helper.getEBI("#note-importance-indicator").value;
+        note.completedBy = Helper.getEBI("#note-date-field").value;
+        note.changedAt = Helper.getDateTime();
+        if(note.created === null) {
+            note.created = note.changedAt;
+        }
+        return note;
+    };
+
+    setNoteData = note => {
+        if(note !== null){
+            Helper.getEBI("#note-title-field").value = note.title;
+            Helper.getEBI("#note-description-field").value = note.description;
+            Helper.getEBI("#note-importance-indicator").value = note.importance;
+            Helper.getEBI("#note-date-field").value = note.completedBy || Helper.getDateTime().split(' ')[0];
+        }
+    };
+
     toggleColorStyle = () => {
         let link = this.cssLink;
         let href = link.href;
@@ -47,37 +76,5 @@ class View {
       Helper.getEBI("#ed-btn-reset-note").click();
       this.setNoteData(this.tempNote);
       this.getNoteForm().style.display = "flex"; // muss mit hide gemacht sein.
-    };
-
-    cancelNoteForm = () => this.closeNoteForm();
-    closeNoteForm = ()=> Helper.getEBI("#modal-form-edit").style.display = "none";
-
-    getNoteData = note => {
-        if(this.tempNote){note = this.tempNote;}
-        let newNote = this.collectNoteData(note);
-        this.closeNoteForm();
-        return newNote;
-    };
-
-    setNoteData = note => {
-        if(note !== null){
-            Helper.getEBI("#note-title-field").value = note.title;
-            Helper.getEBI("#note-description-field").value = note.description;
-            Helper.getEBI("#note-importance-indicator").value = note.importance;
-            Helper.getEBI("#note-date-field").value = note.completedBy;
-        }
-    };
-
-    collectNoteData = note => {
-        note.title = Helper.getEBI("#note-title-field").value;
-        note.description = Helper.getEBI("#note-description-field").value;
-        note.importance = Helper.getEBI("#note-importance-indicator").value;
-        note.completedBy = Helper.getEBI("#note-date-field").value;
-        note.changedAt = new Date().toISOString().replace('T',' ').split('.')[0];
-
-        if(note.created === null) {
-            note.created = note.changedAt;
-        }
-        return note;
     };
 }

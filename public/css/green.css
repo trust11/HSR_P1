@@ -5,4 +5,6 @@
     --textColor: lightyellow;
     --textColorInput: black;
     --textBackgroundColorInput: white;
+    --scrollbarHandleColor: #26a95155;
+    --scrollbarHoverColor: var(--bodyColor);
 }

@@ -3,6 +3,28 @@
     color: var(--textColor);
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 8px grey;
+    border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbarHandleColor);
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active{
+    background: var(--scrollbarHoverColor);
+}
+
 body,
 html {
     height: 100%;
@@ -28,27 +50,46 @@ button, #btn-choose-theme {
 
 #note-overview{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+
     padding: 10px;
     background: #0002;
-    flex-basis: auto;
+    overflow: auto;
 }
 
-#note-Tile{
-    display: flex;
-    flex-direction: column;
+#note-tile{
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
     font-size: x-small;
     border-width: medium;
     background-color: var(--buttonBackgroundColor);
     border-radius: 5px;
     color: var(--buttonTextColor);
-    padding: 2px;
+    padding: 10px;
     margin: 5px;
-    width: 250px;
+    width: 200px;
     height: 250px;
     box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.5), 0 0 10px 1px rgba(0,0,0,0.5);
+}
+
+#note-tile-meta>p{
+    margin: 0.15rem;
+}
+
+#note-tile-description{
     overflow: auto;
+}
+
+#note-tile-meta{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#note-tile-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 /* Edit Note*/

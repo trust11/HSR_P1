@@ -20,19 +20,21 @@ class NoteStore {
     }
 
     async get(id) {
-        let result = await this.db.find({"_id": id});
-        return result;
+        return await thisfind({"_id": id});
     }
 
     async all() {
-        let result = await this.db.find({"stateActive":true});
-        return result;
+        return await this.find({});
     }
 
     async getNoteInstance(){
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             resolve(new Note());
         });
+    }
+
+    async find(filter){
+        return await this.db.find(filter);
     }
 }
 

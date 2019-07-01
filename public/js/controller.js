@@ -101,7 +101,9 @@ class Controller {
     }
 
     finishNote(id) {
-
+        let note = {_id: id, finished: true};
+        this.model.patchNote(note);
+        this.updateNoteOverview();
     }
 
 }

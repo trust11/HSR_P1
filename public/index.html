@@ -55,16 +55,21 @@
     </div>
     <script id="note-overview-template" type="text/x-handlebars-template">
             {{#each this}}
-            <div id="note-Tile">
+            <div id="note-tile">
                 <h3>{{title}}</h3>
-                <p>{{description}}</p>
-                <p>{{importance}}</p>
-                <p>{{completedBy}}</p>
-                <p>{{changedAt}}</p>
-                <p>{{created}}</p>
-                <a href="#" id="note-tile-delete" data-note-id={{_id}}>Delete</a>
-                <a href="#" id="note-tile-edit" data-note-id={{_id}}>Edit</a>
-                <a href="#" id="note-tile-finish" data-note-id={{_id}}>Finish</a>
+                <p id="note-tile-description">{{description}}</p>
+                <div id="note-tile-meta">
+                    <p>Importance</p><p> {{importance}}</p>
+                    <p>Finished</p><p>{{#if finished}}Is Finished{{else}}Not finished{{/if}}</p>
+                    <p>CompleteBy</p><p>{{completedBy}}</p>
+                    <p>Changed</p><p>{{changedAt}}</p>
+                    <p>Created</p><p>{{created}}</p>
+                </div>
+                <div id="note-tile-footer">
+                    <a href="#" id="note-tile-delete" data-note-id={{_id}}>Delete</a>
+                    <a href="#" id="note-tile-edit" data-note-id={{_id}}>Edit</a>
+                    <a href="#" id="note-tile-finish" data-note-id={{_id}}>Finish</a>
+                </div>
             </div>
             {{/each}}
         </script>
