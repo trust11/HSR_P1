@@ -64,8 +64,9 @@ class Model {
             url: "http://localhost:3000/note",
             data: null,
             success: (notes) => {
+
                 this.controller.getNotes_Callback(notes);
-                this.notes = notes;
+                this.notes =notes;
 /*                alert('success' + JSON.stringify( notes));
                 this.noteList = notes;
                 () =>  callbackSuccess(notes);
@@ -117,4 +118,11 @@ class Model {
             },
         });
     }
+
+
+    sortByCreated = (notes, done) => notes.sort((a, b) => this.sortDesc(a.created, b.created)).filter(x => done === x.finished );
+    sortByImportance = (notes, done) => notes.sort((a, b) => this.sortDesc(a.importance, b.importance)).filter(x => done === x.finished );
+    sortByCompletedBy = (notes, done) => notes.sort((a, b) => this.sortAsc(a.completedBy, b.completedBy)).filter(x => done === x.finished );
+    sortAsc = (a, b) => ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    sortDesc = (a, b) => ((a < b) ? 1 : ((a > b) ? -1 : 0));
 }

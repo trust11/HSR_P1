@@ -25,20 +25,6 @@ class Controller {
         this.view.getBtnNoteSort().addEventListener("change", (event) => {
             event.preventDefault();
             this.updateNoteOverview();
-            /*
-            let noteId = event.target.dataset.noteId;
-            switch (event.target.id) {
-                case "rib-orderby-create-date":
-                    this.deleteNote(noteId);
-                    break;
-                case "rib-orderby-importance":
-                    this.editNote(noteId);
-                    break;
-                case "rib-orderby-completed-by-date":
-                    this.finishNote(noteId);
-                    break;
-            }
-            */
         });
     }
 
@@ -85,8 +71,7 @@ class Controller {
     }
 
     getNotes_Callback(notes){
-        let noteFiltered = this.Filter(notes);
-        this.view.showNoteOverview(noteFiltered);
+        this.view.showNoteOverview(this.filter(notes));
         this.initEventsNoteOverviewTile();
     }
 
@@ -129,21 +114,16 @@ class Controller {
         this.updateNoteOverview();
     }
 
-    Filter(notes) {
+    filter(notes) {
+        let doneChecked = this.view.chkDone.checked;
         if (this.view.rtnCompletedBy.checked) {
-           return this.sortByCompletedBy(notes);
+            return this.model.sortByCompletedBy(notes, doneChecked);
         }
         else if (this.view.rtnCreateDate.checked) {
-            return this.sortByCreated(notes);
+            return this.model.sortByCreated(notes, doneChecked);
         }
         else if (this.view.rtnImportance.checked) {
-            return this.sortByImportance(notes);
+            return this.model.sortByImportance(notes, doneChecked);
         }
     }
-
-    sortByCompletedBy = notes => notes.sort((a, b) => this.sortAsc(a.completedBy, b.completedBy));
-    sortByCreated = notes => notes.sort((a, b) => this.sortDesc(a.created, b.created));
-    sortByImportance = notes => notes.sort((a, b) => this.sortDesc(a.importance, b.importance));
-    sortDesc = (a, b) => ((a < b) ? 1 : ((a > b) ? -1 : 0));
-    sortAsc = (a, b) => ((a < b) ? -1 : ((a > b) ? 1 : 0));
 }

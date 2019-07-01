@@ -39,6 +39,7 @@ class View {
         this.rtnCompletedBy = $("#rib-orderby-completed-by-date")[0];
         this.rtnCreateDate = $("#rib-orderby-create-date")[0];
         this.rtnImportance = $("#rib-orderby-importance")[0];
+        this.chkDone = $("#btn-show-done")[0];
     };
 
     setNoteFormButtons = () => {
