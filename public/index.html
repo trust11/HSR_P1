@@ -14,9 +14,7 @@
     <script src='js/jquery-3.3.1.min.js'></script>
     <script src="js/handlebars-v4.1.2.js"></script>
     <script src="js/view.js"></script>
-    <script src="js/viewNoteForm.js"></script>
     <script src="js/controller.js"></script>
-    <script src="js/controllerNoteForm.js"></script>
     <script src="js/model.js"></script>
     <script src="js/helper.js"></script>
 </head>
@@ -64,8 +62,9 @@
                 <p>{{completedBy}}</p>
                 <p>{{changedAt}}</p>
                 <p>{{created}}</p>
-                <a href="#" id="note-delete">Delete</a>
-                <a href="#" id="note-edit">Edit</a>
+                <a href="#" id="note-tile-delete" data-note-id={{_id}}>Delete</a>
+                <a href="#" id="note-tile-edit" data-note-id={{_id}}>Edit</a>
+                <a href="#" id="note-tile-finish" data-note-id={{_id}}>Finish</a>
             </div>
             {{/each}}
         </script>

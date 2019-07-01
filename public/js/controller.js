@@ -1,14 +1,12 @@
 class Controller {
-    note;
     constructor() {
-        // initialize  element events
         this.view = new View();
         this.model = new Model(this);
-        //this.note = null;
+
         this.getEmptyNote();
+        this.updateNoteOverview();
         this.initEvents();
         this.initEventsNoteForm();
-        this.updateNoteOverview();
     }
 
     initEvents(){
@@ -35,12 +33,30 @@ class Controller {
         });
     }
 
+    initEventsNoteOverviewTile(){
+        this.view.getTileElement().addEventListener("click", (event) => {
+            event.preventDefault();
+            let noteId = event.target.dataset.noteId;
+           switch (event.target.id) {
+               case "note-tile-delete":
+                   this.deleteNote(noteId);
+                   break;
+               case "note-tile-edit":
+                   this.editNote(noteId);
+                   break;
+               case "note-tile-finish":
+                   this.finishNote(noteId);
+                   break;
+           }
+        });
+    }
+
     toggleColorStyle(){
         this.view.toggleColorStyle();
     }
 
     openNewNoteWindow() {
-        this.view.showNoteForm();
+        this.view.showNoteForm(this.getEmptyNote());
     }
 
     updateNoteOverview(){
@@ -49,6 +65,7 @@ class Controller {
 
     getNotes_Callback(notes){
         this.view.showNoteOverview(notes);
+        this.initEventsNoteOverviewTile();
     }
 
     cancelNoteForm() {
@@ -56,16 +73,35 @@ class Controller {
     }
 
     saveNoteForm(){
-        let tempNote = Object.assign({},this.note);
+        let tempNote = this.getEmptyNote();
         let note =  this.view.getNoteData(tempNote);
-        this.model.saveNote(note);
+        note._id === undefined ? this.model.saveNote(note) : this.model.updateNote(note);
         this.updateNoteOverview();
     }
 
     getEmptyNote(){ //empty note
-        this.model.getNote("NEWITEM");
+        if(this.note === undefined ){
+            return this.model.getNote("NEWITEM");
+        }else{
+            return Object.assign({},this.note);
+        }
     }
     getNote_Callback(note){
         this.note = note;
     }
+
+    editNote(id) {
+        let json = this.model.getNote(id);
+        this.view.showNoteForm(json);
+    }
+
+    deleteNote(id) {
+        this.model.deleteNote(id);
+        this.updateNoteOverview();
+    }
+
+    finishNote(id) {
+
+    }
+
 }

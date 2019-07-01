@@ -15,7 +15,7 @@ class NoteStore {
     }
 
     async delete(id) {
-        this.db.delete({_id: id});
+        this.db.remove({_id: id});
         //return await this.get(id);
     }
 

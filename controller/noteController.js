@@ -36,7 +36,7 @@ class NoteController {
     }
 
     async deleteNote(req, res) {
-        res.json(await this.noteStore.delete(req.params.id));
+        res.json(await this.noteStore.delete(req.body.id));
     };
 }
 
