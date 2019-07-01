@@ -28,7 +28,7 @@ button, #btn-choose-theme {
 
 #note-overview{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
     background: #0002;
@@ -45,9 +45,10 @@ button, #btn-choose-theme {
     color: var(--buttonTextColor);
     padding: 2px;
     margin: 5px;
-    width: auto;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.5), 0 0 10px 1px rgba(0,0,0,0.5);
+    overflow: auto;
 }
 
 /* Edit Note*/
