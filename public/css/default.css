@@ -108,12 +108,13 @@ button, #btn-choose-theme {
 #dialog-edit-note {
     display: flex;
     flex-direction: column;
+    justify-content: space-between ;
     background: var(--bodyColor);
+    height: 300px;
     width: 60%;
     margin: auto;
     max-width: 400px;
-    animation-name: fadeIn;
-    animation-duration: 0.4s
+    padding: 15px
 }
 
 /* All about grid */

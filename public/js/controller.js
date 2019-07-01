@@ -2,10 +2,10 @@ class Controller {
     constructor() {
         this.view = new View();
         this.model = new Model(this);
-
         this.getEmptyNote();
         this.updateNoteOverview();
         this.initEvents();
+        this.initSortEvents();
         this.initEventsNoteForm();
     }
 
@@ -21,6 +21,27 @@ class Controller {
         }
     }
 
+    initSortEvents(){
+        this.view.getBtnNoteSort().addEventListener("change", (event) => {
+            event.preventDefault();
+            this.updateNoteOverview();
+            /*
+            let noteId = event.target.dataset.noteId;
+            switch (event.target.id) {
+                case "rib-orderby-create-date":
+                    this.deleteNote(noteId);
+                    break;
+                case "rib-orderby-importance":
+                    this.editNote(noteId);
+                    break;
+                case "rib-orderby-completed-by-date":
+                    this.finishNote(noteId);
+                    break;
+            }
+            */
+        });
+    }
+
     initEventsNoteForm(){
         this.view.getBtnSaveNote().addEventListener("click", (event) => {
             event.preventDefault();
@@ -34,9 +55,9 @@ class Controller {
     }
 
     initEventsNoteOverviewTile(){
-        this.view.getTileElement().addEventListener("click", (event) => {
-            event.preventDefault();
-            let noteId = event.target.dataset.noteId;
+        this.view.getNoteOverview().addEventListener("click", (event) => {
+           event.preventDefault();
+           let noteId = event.target.dataset.noteId;
            switch (event.target.id) {
                case "note-tile-delete":
                    this.deleteNote(noteId);
@@ -60,11 +81,12 @@ class Controller {
     }
 
     updateNoteOverview(){
-        this.model.getNotes(this.getNotes_Callback);
+       this.model.getNotes(this.getNotes_Callback);
     }
 
     getNotes_Callback(notes){
-        this.view.showNoteOverview(notes);
+        let noteFiltered = this.Filter(notes);
+        this.view.showNoteOverview(noteFiltered);
         this.initEventsNoteOverviewTile();
     }
 
@@ -101,9 +123,27 @@ class Controller {
     }
 
     finishNote(id) {
-        let note = {_id: id, finished: true};
+        let stateFinish = !this.model.getNote(id).finished;
+        let note = {_id: id, finished: stateFinish};
         this.model.patchNote(note);
         this.updateNoteOverview();
     }
 
+    Filter(notes) {
+        if (this.view.rtnCompletedBy.checked) {
+           return this.sortByCompletedBy(notes);
+        }
+        else if (this.view.rtnCreateDate.checked) {
+            return this.sortByCreated(notes);
+        }
+        else if (this.view.rtnImportance.checked) {
+            return this.sortByImportance(notes);
+        }
+    }
+
+    sortByCompletedBy = notes => notes.sort((a, b) => this.sortAsc(a.completedBy, b.completedBy));
+    sortByCreated = notes => notes.sort((a, b) => this.sortDesc(a.created, b.created));
+    sortByImportance = notes => notes.sort((a, b) => this.sortDesc(a.importance, b.importance));
+    sortDesc = (a, b) => ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    sortAsc = (a, b) => ((a < b) ? -1 : ((a > b) ? 1 : 0));
 }

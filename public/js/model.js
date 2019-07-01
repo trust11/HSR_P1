@@ -75,6 +75,7 @@ class Model {
                 alert('nok');
             },
         });
+
     }
 
     getNote(id){
