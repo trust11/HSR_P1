@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="327d7807-e0ea-4083-804a-a3434eba9475" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/note.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/note.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/blue.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/green.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/view.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,10 +28,19 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/index.html">
+            <entry file="file://$PROJECT_DIR$/public/js/view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="201">
-                  <caret line="57" column="30" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="30" />
+                <state relative-caret-position="187">
+                  <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/controller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -35,11 +49,29 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/default.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" selection-start-line="17" selection-end-line="17" />
+                <state relative-caret-position="2788">
+                  <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/css/blue.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/css/green.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -54,15 +86,23 @@
       <find>i&gt;</find>
       <find>Helper.getEBI</find>
       <find>:first&quot;)</find>
-      <find>note</find>
       <find>getNotes_Callback</find>
       <find>Filter</find>
+      <find>modal-form-edit</find>
+      <find>note-tile</find>
+      <find>ed-btn-reset-note</find>
+      <find>ed-btn-cancel-note</find>
+      <find>class</find>
+      <find>note</find>
     </findStrings>
     <replaceStrings>
       <replace>p&gt;</replace>
       <replace>$</replace>
       <replace>&quot;)[0]</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>G:\User\Mike\OneDrive\Dokumente\CAS\HSR_P1\public</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,16 +116,16 @@
         <option value="$PROJECT_DIR$/routes/noteRoutes.js" />
         <option value="$PROJECT_DIR$/controller/noteController.js" />
         <option value="$PROJECT_DIR$/services/note.js" />
-        <option value="$PROJECT_DIR$/public/css/blue.css" />
-        <option value="$PROJECT_DIR$/public/css/green.css" />
         <option value="$PROJECT_DIR$/services/noteStore.js" />
         <option value="$PROJECT_DIR$/public/js/helper.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/js/view.js" />
-        <option value="$PROJECT_DIR$/public/js/controller.js" />
         <option value="$PROJECT_DIR$/public/js/model.js" />
         <option value="$PROJECT_DIR$/data/note.db" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controller.js" />
+        <option value="$PROJECT_DIR$/public/js/view.js" />
         <option value="$PROJECT_DIR$/public/css/default.css" />
+        <option value="$PROJECT_DIR$/public/css/green.css" />
+        <option value="$PROJECT_DIR$/public/css/blue.css" />
       </list>
     </option>
   </component>
@@ -230,7 +270,7 @@
       <workItem from="1561915205463" duration="2050000" />
       <workItem from="1561917312687" duration="2105000" />
       <workItem from="1561955405860" duration="9389000" />
-      <workItem from="1561965806132" duration="36254000" />
+      <workItem from="1561965806132" duration="39247000" />
     </task>
     <task id="LOCAL-00001" summary="some bug fixing">
       <created>1561851209288</created>
@@ -309,11 +349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562020189944</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="small fixes">
+      <created>1562021374613</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562021374613</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87022000" />
+    <option name="totallyTimeSpent" value="90015000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -328,14 +375,14 @@
     <frame x="-1928" y="-5" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13432837" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13432837" />
       <window_info id="Structure" order="1" sideWeight="0.5007342" side_tool="true" weight="0.13277134" />
       <window_info id="npm" order="2" sideWeight="0.5016234" side_tool="true" weight="0.13277134" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.47986943" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.19912949" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" visible="true" weight="0.2546246" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" visible="true" weight="0.2546246" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.44504896" />
@@ -429,7 +476,8 @@
     <MESSAGE value="Scrollbar beautified&#10;Overflow added where needed&#10;FinishNote implemented&#10;DateTime in Helper added&#10;View cleanup code" />
     <MESSAGE value="Filtering added" />
     <MESSAGE value="Sort added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sort added" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointLogExpression">
@@ -557,13 +605,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/nedb/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/green.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -595,38 +636,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="41" column="45" lean-forward="true" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery-3.3.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="27436" selection-start-line="1" selection-start-column="27436" selection-end-line="1" selection-end-column="27436" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="122" column="112" selection-start-line="122" selection-start-column="112" selection-end-line="122" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="122" column="64" selection-start-line="122" selection-start-column="64" selection-end-line="122" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/blue.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -637,17 +650,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery-3.3.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="30" />
+          <caret line="65" column="29" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="2788">
+          <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/green.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/blue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>

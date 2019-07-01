@@ -4,15 +4,15 @@ class View {
     constructor() {
         this.cssLink = $("#colorStyle")[0];
         this.setMainFormElements();
-        this.setNoteFormButtons();
+        this.setDialogFormButtons();
     }
 
     getBtnNewNote = () => this.btnNewNote;
     getBtnChooseTheme = () => this.btnChooseTheme;
     getBtnNoteSort= () => this.btnNoteSort;
-    getBtnSaveNote = () => this.btnNoteSave;
-    getBtnCancelNote = () => this.btnNoteCancel;
-    getNoteForm = () => $("#modal-form-edit")[0];
+    getBtnSaveNote = () => this.btnDialogNoteSave;
+    getBtnCancelNote = () => this.btnDialogNoteCancel;
+    getNoteForm = () => $("#dialog-edit-note-container")[0];
     getNoteOverview = () => $("#note-overview")[0];
     getNoteOverviewTemplateContent = () => $("#note-overview-template")[0];
 
@@ -42,10 +42,10 @@ class View {
         this.chkDone = $("#btn-show-done")[0];
     };
 
-    setNoteFormButtons = () => {
-        this.btnNoteSave = $("#ed-btn-save-note")[0];
-        this.btnNoteCancel = $("#ed-btn-cancel-note")[0];
-        this.btnNoteReset = $("#ed-btn-reset-note")[0];
+    setDialogFormButtons = () => {
+        this.btnDialogNoteSave = $("#dialog-ed-btn-save-note")[0];
+        this.btnDialogNoteCancel = $("#dialog-ed-btn-cancel-note")[0];
+        this.btnNoteReset = $("#dialog-ed-btn-reset-note")[0];
     };
 
     getNoteData = note => {
@@ -56,10 +56,10 @@ class View {
     };
 
     getNoteDataFormInputElements = note => {
-        note.title = $("#note-title-field")[0].value;
-        note.description = $("#note-description-field")[0].value;
-        note.importance = $("#note-importance-indicator")[0].value;
-        note.completedBy = $("#note-date-field")[0].value;
+        note.title = $("#dialog-note-title-field")[0].value;
+        note.description = $("#dialog-note-description-field")[0].value;
+        note.importance = $("#dialog-note-importance-indicator")[0].value;
+        note.completedBy = $("#dialog-note-date-field")[0].value;
         note.changedAt = Helper.getDateTime();
         if(note.created === null) {
             note.created = note.changedAt;
@@ -69,10 +69,10 @@ class View {
 
     setNoteData = note => {
         if(note !== null){
-            $("#note-title-field")[0].value = note.title;
-            $("#note-description-field")[0].value = note.description;
-            $("#note-importance-indicator")[0].value = note.importance;
-            $("#note-date-field")[0].value = note.completedBy || Helper.getDateTime().split(' ')[0];
+            $("#dialog-note-title-field")[0].value = note.title;
+            $("#dialog-note-description-field")[0].value = note.description;
+            $("#dialog-note-importance-indicator")[0].value = note.importance;
+            $("#dialog-note-date-field")[0].value = note.completedBy || Helper.getDateTime().split(' ')[0];
         }
     };
     toggleColorStyle = () => {

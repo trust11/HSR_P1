@@ -1,10 +1,8 @@
 * {
-    --bodyColor: #3980a9;
+    --bodyColor: #3990a9;
     --buttonTextColor: #ffe8d3;
-    --buttonBackgroundColor: #192638;
+    --BackgroundColor: #191638;
     --textColor: #ffd8dd;
     --textColorInput: black;
     --textBackgroundColorInput: white;
-    --scrollbarHandleColor: #3980a955;
-    --scrollbarHoverColor: var(--bodyColor);
 }

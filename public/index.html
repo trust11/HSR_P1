@@ -19,14 +19,13 @@
 </head>
 <body>
 
-<main id="grid-main-overview">
+<main id="main-container">
     <header>
-        <div id="btn-top" class="btn-wrapper">
+        <div class="btn-wrapper">
             <select id="btn-choose-theme">
                 <option value="Blue">Blue</option>
                 <option value="Green">Green</option>
             </select>
-            <label for="btn-choose-theme" hidden>Theme</label>
             <button id="btn-create-new-note" class="btn-wrapper-right">Create New Note</button>
         </div>
         <div id="btn-note-sort" class="rbt-wrapper">
@@ -72,16 +71,16 @@
             </div>
             {{/each}}
         </script>
-    <div  id="modal-form-edit">
-        <form id="dialog-edit-note" name="Note">
-            <label for="note-title-field">Title</label>
-            <input id="note-title-field" type="text" placeholder="...my note title...">
+    <div  id="dialog-edit-note-container">
+        <form id="dialog-edit-note">
+            <label for="dialog-note-title-field">Title</label>
+            <input id="dialog-note-title-field" type="text" placeholder="...your note title...">
 
-            <label for="note-description-field">Description</label>
-            <textarea id="note-description-field" type="text" placeholder="...my note it self..."></textarea>
+            <label for="dialog-note-description-field">Description</label>
+            <textarea id="dialog-note-description-field" type="text" placeholder="...your note details..."></textarea>
 
-            <label for="note-importance-indicator">Importance</label>
-            <select type="text" id="note-importance-indicator">
+            <label for="dialog-note-importance-indicator">Importance</label>
+            <select type="text" id="dialog-note-importance-indicator">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -89,19 +88,19 @@
                 <option value="5">5</option>
             </select>
 
-            <label for="note-date-field">Done Date</label>
-            <input id="note-date-field" type="date">
+            <label for="dialog-note-date-field">Done Date</label>
+            <input id="dialog-note-date-field" type="date">
 
-            <button id="ed-btn-reset-note" type="reset">Reset</button>
-            <button id="ed-btn-save-note">Save</button>
-            <button id="ed-btn-cancel-note">Cancel</button>
+            <button id="dialog-ed-btn-reset-note" type="reset">Reset</button>
+            <button id="dialog-ed-btn-save-note">Save</button>
+            <button id="dialog-ed-btn-cancel-note">Cancel</button>
         </form>
     </div >
 
     <footer>
         <div class="btn-wrapper">
-            <div class="footer-author">Crated by Peter Müller</div>
-            <div class="btn-wrapper-right">DRAFT</div>
+            <div class="footer-author">Created by Michael Aebi</div>
+            <div class="btn-wrapper-right">Beta0</div>
         </div>
     </footer>
 </main>

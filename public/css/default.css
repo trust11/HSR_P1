@@ -3,109 +3,22 @@
     color: var(--textColor);
 }
 
-/* width */
-::-webkit-scrollbar {
-    display: none;
-}
-
 body,
 html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: var(--bodyColor);
-}
-/* Button Style */
-form > [type=text], form > [type=date], form > select > option {
-    color: var(--textColorInput);
-    background: var(--textBackgroundColorInput);
+    background-color: var(--BackgroundColor);
 }
 
-button, #btn-choose-theme {
-    border: none;
-    border-radius: 5px;
-    background: var(--buttonBackgroundColor);
-    color: var(--buttonTextColor);
-    font-size: 1.2em;
-}
+::-webkit-scrollbar {
+     display: none;
+ }
 
-#note-overview{
-    display: flex;
-    flex-flow: row wrap;
-
-    padding: 10px;
-    background: #0002;
-    overflow: auto;
-}
-
-#note-tile{
-    display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    font-size: x-small;
-    border-width: medium;
-    background-color: var(--buttonBackgroundColor);
-    border-radius: 5px;
-    color: var(--buttonTextColor);
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
-    height: 250px;
-    box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.5), 0 0 10px 1px rgba(0,0,0,0.5);
-}
-
-#note-tile-meta>p{
-    margin: 0.15rem;
-}
-
-#note-tile-description{
-    overflow: auto;
-}
-
-#note-tile-meta{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-#note-tile-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-/* Edit Note*/
-#modal-form-edit {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background: #fff6;
-}
-
-#dialog-edit-note {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between ;
-    background: var(--bodyColor);
-    height: 300px;
-    width: 60%;
-    margin: auto;
-    max-width: 400px;
-    padding: 15px
-}
-
-/* All about grid */
+/* Main Container of the site*/
 
 
-#grid-main-overview > section {
-    border: 2px solid;
-}
-
-#grid-main-overview {
+#main-container {
     display: grid;
     margin: 0 auto;
     max-width: 940px;
@@ -113,24 +26,101 @@ button, #btn-choose-theme {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: "header" "content" "footer";
     box-shadow: 0 0 8px 1px rgba(0,0,0,0.5), 0 0 8px 1px rgba(0,0,0,0.5);
+    background: var(--bodyColor);
 }
 
-#grid-main-overview > header, section, footer {
-    /* min-height:50px;*/
+#main-container > section {
+    border: 2px solid;
+}
+#main-container > header, section, footer {
+/* min-height:50px;*/
     padding: 0;
 }
 
-#grid-main-overview > header {
+#main-container > header {
     grid-area: header;
 }
 
-#grid-main-overview > section {
+#main-container > section {
     grid-area: content;
 }
 
-#grid-main-overview > footer {
+#main-container > footer {
     grid-area: footer;
 }
+
+/* Notes display area and there elements*/
+
+#note-overview{
+display: flex;
+flex-flow: row wrap;
+
+padding: 10px;
+background: #0002;
+overflow: auto;
+}
+
+#note-tile{
+display: grid;
+grid-template-rows: auto 1fr auto auto;
+font-size: x-small;
+border-width: medium;
+background-color: var(--BackgroundColor);
+border-radius: 5px;
+color: var(--buttonTextColor);
+padding: 10px;
+margin: 5px;
+width: 200px;
+height: 250px;
+box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.5), 0 0 10px 1px rgba(0,0,0,0.5);
+}
+
+#note-tile-meta>p{
+margin: 0.15rem;
+}
+
+#note-tile-description{
+overflow: auto;
+}
+
+#note-tile-meta{
+display: grid;
+grid-template-columns: auto auto;
+}
+
+#note-tile-footer{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+padding: 10px;
+}
+
+/* Edit Dialog Window*/
+
+#dialog-edit-note-container {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background: #fff6;
+}
+
+#dialog-edit-note {
+display: flex;
+flex-direction: column;
+justify-content: space-between ;
+background: var(--bodyColor);
+height: 300px;
+width: 60%;
+margin: auto;
+max-width: 400px;
+padding: 15px
+}
+
 
 /*
 *** Button wrapper for the filter buttons
@@ -163,6 +153,20 @@ button, #btn-choose-theme {
     padding: 10px;
     background: #0002;
 }
+
+form > [type=text], form > [type=date], form > select > option {
+    color: var(--textColorInput);
+    background: var(--textBackgroundColorInput);
+}
+
+button, #btn-choose-theme {
+    border: none;
+    border-radius: 5px;
+    background: var(--BackgroundColor);
+    color: var(--buttonTextColor);
+    font-size: 1.2em;
+}
+
 
 .footer-author {
     grid-column: 1 / span 2
