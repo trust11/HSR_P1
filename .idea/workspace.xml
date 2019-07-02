@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327d7807-e0ea-4083-804a-a3434eba9475" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -155,11 +152,6 @@
             <path>
               <item name="HSR_P1" type="b2602c69:ProjectViewProjectNode" />
               <item name="HSR_P1" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HSR_P1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HSR_P1" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,7 +256,7 @@
       <workItem from="1561917312687" duration="2105000" />
       <workItem from="1561955405860" duration="9389000" />
       <workItem from="1561965806132" duration="45518000" />
-      <workItem from="1562067372092" duration="443000" />
+      <workItem from="1562067372092" duration="695000" />
     </task>
     <task id="LOCAL-00001" summary="some bug fixing">
       <created>1561851209288</created>
@@ -364,11 +356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562030142718</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="finetuning and renaming">
+      <created>1562068043871</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1562068043871</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96729000" />
+    <option name="totallyTimeSpent" value="96981000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -381,9 +380,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13382508" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13382508" />
       <window_info id="Structure" order="1" sideWeight="0.5007342" side_tool="true" weight="0.13277134" />
       <window_info id="npm" order="2" sideWeight="0.5016234" side_tool="true" weight="0.13277134" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -396,10 +394,10 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.44504896" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49894625" weight="0.11207835" />
+      <window_info active="true" anchor="bottom" id="Messages" order="9" sideWeight="0.49894625" visible="true" weight="0.11121764" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297062" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50105375" side_tool="true" weight="0.34711644" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.41706616" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.41706616" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.08742005" />
@@ -691,7 +689,7 @@
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
     </entry>
