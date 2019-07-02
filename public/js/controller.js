@@ -115,14 +115,14 @@ class Controller {
     }
 
     filter(notes) {
-        let doneChecked = this.view.chkDone.checked;
-        if (this.view.rtnCompletedBy.checked) {
+        let doneChecked = this.view.getChkDone().checked;
+        if (this.view.getRtnCompletedBy().checked) {
             return this.model.sortByCompletedBy(notes, doneChecked);
         }
-        else if (this.view.rtnCreateDate.checked) {
+        else if (this.view.getRtnCreateDate().checked) {
             return this.model.sortByCreated(notes, doneChecked);
         }
-        else if (this.view.rtnImportance.checked) {
+        else if (this.view.getRtnImportance().checked) {
             return this.model.sortByImportance(notes, doneChecked);
         }
     }

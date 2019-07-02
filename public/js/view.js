@@ -7,24 +7,30 @@ class View {
         this.setDialogFormButtons();
     }
 
-    getBtnNewNote = () => this.btnNewNote;
-    getBtnChooseTheme = () => this.btnChooseTheme;
-    getBtnNoteSort= () => this.btnNoteSort;
-    getBtnSaveNote = () => this.btnDialogNoteSave;
-    getBtnCancelNote = () => this.btnDialogNoteCancel;
+
+
     getNoteForm = () => $("#dialog-edit-note-container")[0];
     getNoteOverview = () => $("#note-overview")[0];
     getNoteOverviewTemplateContent = () => $("#note-overview-template")[0];
 
-    cancelNoteForm = () => this.closeNoteForm();
+    getBtnNewNote =() =>  this.btnNewNote;
+    getBtnChooseTheme = () => this.btnChooseTheme;
+    getBtnNoteSort =() =>  this.btnNoteSort ;
+    getRtnCompletedBy =() =>  this.rtnCompletedBy;
+    getRtnCreateDate = () =>  this.rtnCreateDate;
+    getRtnImportance = () => this.rtnImportance;
+    getChkDone = () =>   this.chkDone;
+    getBtnSaveNote = () => this.btnDialogNoteSave;
+    getBtnCancelNote = () => this.btnDialogNoteCancel;
 
+    cancelNoteForm = () => this.closeNoteForm();
     closeNoteForm = ()=> this.getNoteForm().style.display = "none";
 
     showNoteForm = (note) => {
         this.tempNote = note;
         this.btnNoteReset.click();
         this.setNoteData(this.tempNote);
-        this.getNoteForm().style.display = "flex"; // muss mit hide gemacht sein.
+        this.getNoteForm().style.display = "flex";
     };
 
     showNoteOverview = notes => {

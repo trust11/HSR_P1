@@ -1,41 +1,25 @@
 class Model {
-    notes = null;
     constructor(controller) {
         this.controller = controller;
-        this.notes = null;
-    }
+     }
 
     saveNote(note){
         $.ajax({
             type: 'POST',
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify(note),
-            success: (json) => {
-                //
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                /*  alert(textStatus);
-                  alert(errorThrown.message);*/
-            },
+            data: JSON.stringify(note)
         });
     }
 
     updateNote(note){
         $.ajax({
             type: 'PUT',
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify(note),
-            success: (json) => {
-                //
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                /*  alert(textStatus);
-                  alert(errorThrown.message);*/
-            },
+            data: JSON.stringify(note)
         });
     }
 
@@ -45,14 +29,7 @@ class Model {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify(note),
-            success: (json) => {
-                //
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                /*  alert(textStatus);
-                  alert(errorThrown.message);*/
-            },
+            data: JSON.stringify(note)
         });
     }
 
@@ -64,17 +41,9 @@ class Model {
             url: "http://localhost:3000/note",
             data: null,
             success: (notes) => {
-
                 this.controller.getNotes_Callback(notes);
-                this.notes =notes;
-/*                alert('success' + JSON.stringify( notes));
-                this.noteList = notes;
-                () =>  callbackSuccess(notes);
-*/
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                alert('nok');
-            },
+                this.notes = notes;
+            }
         });
 
     }
@@ -91,15 +60,7 @@ class Model {
             data: {id: id},
             success: (note) => {
                 this.controller.getNote_Callback(note);
-                /*
-                                alert('success' + JSON.stringify( notes));
-                                this.noteList = notes;
-                                () =>  callbackSuccess(notes);
-                */
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                alert('nok');
-            },
+            }
         });
     }
 
@@ -109,13 +70,7 @@ class Model {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: "http://localhost:3000/note",
-            data: JSON.stringify({id: id}),
-            success: (note) => {
-
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-
-            },
+            data: JSON.stringify({id: id})
         });
     }
 
